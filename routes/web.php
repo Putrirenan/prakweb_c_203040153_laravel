@@ -69,3 +69,6 @@ Route::get('dashboard', function () {
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 // Halaman Dashboard Post
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+
+// Halaman Category
+Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show');
